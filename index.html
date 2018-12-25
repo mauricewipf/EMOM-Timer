@@ -2,12 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>EMOMTimer</title>
+  <title>EMOM-Timer</title>
   <base href="/EMOM-Timer/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#673ab7">
+  <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    #loading{display:inline-block;width:50px;height:50px;border:3px solid rgba(103,58,183,.3);border-radius:50%;border-top-color:#673ab7;animation:spin 1s ease-in-out infinite;position:fixed;left:calc(50% - 25px);top:calc(50% - 25px)}@keyframes spin{to{transform:rotate(360deg)}}
+  </style>
 <link rel="stylesheet" href="styles.01e9942e066a132a0fa1.css"></head>
 <body>
-  <app-root></app-root>
+  <app-root>
+    <nav style="background-color: #673ab7; height: 56px; width: 100%"></nav>
+    <noscript>
+      <h3 style="color: #673ab7; font-family: Helvetica; margin: 2rem;">
+          Sorry, but app is not available without javascript
+      </h3>
+    </noscript>
+    <div id="loading"></div>
+  </app-root>
 <script type="text/javascript" src="runtime.ec2944dd8b20ec099bf3.js"></script><script type="text/javascript" src="polyfills.1ef83d22ada557f4a131.js"></script><script type="text/javascript" src="main.f21c1e711e8ca1e75de9.js"></script></body>
 </html>
