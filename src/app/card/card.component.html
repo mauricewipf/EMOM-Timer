@@ -1,15 +1,42 @@
 <mat-card>
-  <mat-card-actions>
+  <mat-card-title>
+    EMOM-Timer
+  </mat-card-title>
+  <mat-card-content>
+      {{remainingSeconds}}
+  </mat-card-content>
+  <mat-card-actions *ngIf="!isTimerRunning">
     <button 
       color="primary" 
-      (click)="generateSrc()"
+      (click)="startTimer(4)"
       mat-button 
       mat-raised-button>
-      Give me another cat
+      Start (60 sec)
     </button>
   </mat-card-actions>
-  <img 
-    src="{{src}}"
-    alt="Cute cat"
-    mat-card-image>
+  <mat-card-actions *ngIf="isTimerRunning">
+    <button 
+      *ngIf="!isTimerPaused"
+      color="primary" 
+      (click)="pause()"
+      mat-button 
+      mat-raised-button>
+      Pause
+    </button>
+    <button 
+      *ngIf="isTimerPaused"
+      color="primary" 
+      (click)="continue()"
+      mat-button 
+      mat-raised-button>
+      Continue
+    </button>
+    <button 
+      color="warn" 
+      (click)="stop()"
+      mat-button 
+      mat-raised-button>
+      Stop
+    </button>
+  </mat-card-actions>  
 </mat-card>

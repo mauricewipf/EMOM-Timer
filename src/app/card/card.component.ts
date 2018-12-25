@@ -6,27 +6,41 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-  public src: string;
+  private remainingSeconds: number;
+  private isTimerRunning = false;
+  private isTimerPaused = false;
 
   constructor() { }
 
-  private image: CatImage = {
-    message: 'Progressive Web Cat',
-    api: 'https://cataas.com/cat/says/',
-    fontsize: 40
-  };
-
   ngOnInit() {
-    this.src = this.image.api + this.image.message + '?size=' + this.image.fontsize;
   }
 
-  public generateSrc(): void {
-    this.src = this.src.replace(/\&ts=[\w]*/gi, '') + '&ts=' + Date.now();
+  private startTimer(remainingSeconds: number): void {
+    this.remainingSeconds = remainingSeconds;
+    this.isTimerRunning = true;
+    setTimeout(() => {
+      if (this.remainingSeconds > 0 && !this.isTimerPaused) {
+        this.remainingSeconds = --remainingSeconds;
+        this.startTimer(this.remainingSeconds);
+        console.log(remainingSeconds);
+      } else if (this.remainingSeconds === 0) {
+        this.isTimerRunning = false;
+      }
+    }, 1000);
   }
-}
 
-class CatImage {
-  message: string;
-  api: string;
-  fontsize: number;
+  private pause(): void {
+    this.isTimerPaused = true;
+  }
+
+  private continue(): void {
+    this.isTimerPaused = false;
+    this.startTimer(this.remainingSeconds);
+  }
+
+  private stop(): void {
+    this.continue();
+    this.remainingSeconds = 0;
+  }
+
 }
