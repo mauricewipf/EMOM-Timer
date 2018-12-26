@@ -6,55 +6,28 @@
     Round {{currentRound}} of {{rounds}}
   </mat-card-title>
   <mat-card-content>
-      {{remainingSeconds}}
+    {{remainingSeconds}}
   </mat-card-content>
   <mat-card-actions *ngIf="!isTimerRunning">
-    <button 
-      color="basic" 
-      (click)="editRounds(+1)"
-      mat-button 
-      mat-raised-button>
+    <button color="basic" (click)="editRounds(+1)" mat-button mat-raised-button>
       +1 round
     </button>
-    <button 
-    [disabled]="rounds <= 1"
-      color="basic" 
-      (click)="editRounds(-1)"
-      mat-button 
-      mat-raised-button>
+    <button [disabled]="rounds <= 1" color="basic" (click)="editRounds(-1)" mat-button mat-raised-button>
       -1 round
     </button>
-    <button 
-      color="primary" 
-      (click)="startTimer()"
-      mat-button 
-      mat-raised-button>
+    <button color="primary" (click)="startTimer()" mat-button mat-raised-button>
       Start {{rounds}} rd(s)
     </button>
   </mat-card-actions>
   <mat-card-actions *ngIf="isTimerRunning">
-    <button 
-      *ngIf="!isTimerPaused"
-      color="basic" 
-      (click)="pause()"
-      mat-button 
-      mat-raised-button>
+    <button *ngIf="!isTimerPaused" color="basic" (click)="pause()" mat-button mat-raised-button>
       Pause
     </button>
-    <button 
-      *ngIf="isTimerPaused"
-      color="basic" 
-      (click)="continue()"
-      mat-button 
-      mat-raised-button>
+    <button *ngIf="isTimerPaused" color="basic" (click)="continue()" mat-button mat-raised-button>
       Continue
     </button>
-    <button 
-      color="basic" 
-      (click)="stop()"
-      mat-button 
-      mat-raised-button>
+    <button color="basic" (click)="stop()" mat-button mat-raised-button>
       Stop
     </button>
-  </mat-card-actions>  
+  </mat-card-actions>
 </mat-card>

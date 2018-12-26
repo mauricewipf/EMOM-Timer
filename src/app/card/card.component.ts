@@ -14,7 +14,7 @@ export class CardComponent implements OnInit {
   private currentRound = 1;
   private audio: any;
 
-  constructor() { 
+  constructor() {
     this.audio = new Audio('../assets/Tick-DeepFrozenApps-397275646.mp3');
   }
 
@@ -39,7 +39,7 @@ export class CardComponent implements OnInit {
         this.isTimerRunning = false;
         this.currentRound = 1;
         this.remainingSeconds = this.sixtySeconds;
-      } 
+      }
     }, 1000);
   }
 
@@ -59,7 +59,7 @@ export class CardComponent implements OnInit {
     this.remainingSeconds = this.sixtySeconds;
   }
 
-  private editRounds(increment): void {
+  private editRounds(increment: number): void {
     if (this.rounds >= 1) {
       this.rounds = this.rounds + increment;
     }
