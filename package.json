@@ -1,6 +1,6 @@
 {
   "name": "emom-timer",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "publish": "npm run build2 && npx ngh --dir=dist/EMOM-Timer"
+    "publish": "npm run build2 && npx ngh --dir=dist/EMOM-Timer",
+    "heroku": "ng build --prod && git push heroku master"
   },
   "private": true,
   "dependencies": {

@@ -1,23 +1,41 @@
 <mat-card>
-  <mat-card-title>
+  <mat-card-title *ngIf="!isTimerRunning">
     EMOM-Timer
+  </mat-card-title>
+  <mat-card-title *ngIf="isTimerRunning">
+    Round {{currentRound}} of {{rounds}}
   </mat-card-title>
   <mat-card-content>
       {{remainingSeconds}}
   </mat-card-content>
   <mat-card-actions *ngIf="!isTimerRunning">
     <button 
-      color="primary" 
-      (click)="startTimer(60)"
+      color="basic" 
+      (click)="editRounds(+1)"
       mat-button 
       mat-raised-button>
-      Start (60 sec)
+      +1 round
+    </button>
+    <button 
+    [disabled]="rounds <= 1"
+      color="basic" 
+      (click)="editRounds(-1)"
+      mat-button 
+      mat-raised-button>
+      -1 round
+    </button>
+    <button 
+      color="primary" 
+      (click)="startTimer()"
+      mat-button 
+      mat-raised-button>
+      Start {{rounds}} rd(s)
     </button>
   </mat-card-actions>
   <mat-card-actions *ngIf="isTimerRunning">
     <button 
       *ngIf="!isTimerPaused"
-      color="primary" 
+      color="basic" 
       (click)="pause()"
       mat-button 
       mat-raised-button>
@@ -25,14 +43,14 @@
     </button>
     <button 
       *ngIf="isTimerPaused"
-      color="primary" 
+      color="basic" 
       (click)="continue()"
       mat-button 
       mat-raised-button>
       Continue
     </button>
     <button 
-      color="warn" 
+      color="basic" 
       (click)="stop()"
       mat-button 
       mat-raised-button>

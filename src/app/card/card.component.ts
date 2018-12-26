@@ -6,9 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-  public remainingSeconds: number;
+  private sixtySeconds = 10;
+  public remainingSeconds = this.sixtySeconds;
   public isTimerRunning = false;
   public isTimerPaused = false;
+  public rounds = 1;
+  private currentRound = 1;
   private audio: any;
 
   constructor() { 
@@ -18,7 +21,7 @@ export class CardComponent implements OnInit {
   ngOnInit() {
   }
 
-  private startTimer(remainingSeconds: number): void {
+  private startTimer(remainingSeconds = this.sixtySeconds): void {
     this.remainingSeconds = remainingSeconds;
     this.isTimerRunning = true;
     setTimeout(() => {
@@ -28,10 +31,15 @@ export class CardComponent implements OnInit {
           this.audio.play();
         }
         this.startTimer(this.remainingSeconds);
-        console.log(remainingSeconds);
-      } else if (this.remainingSeconds === 0) {
+      } else if (this.remainingSeconds === 0 && this.currentRound < this.rounds) {
+        ++this.currentRound;
+        this.remainingSeconds = this.sixtySeconds;
+        this.startTimer(this.remainingSeconds);
+      } else if (this.remainingSeconds === 0 && this.currentRound === this.rounds) {
         this.isTimerRunning = false;
-      }
+        this.currentRound = 1;
+        this.remainingSeconds = this.sixtySeconds;
+      } 
     }, 1000);
   }
 
@@ -45,8 +53,14 @@ export class CardComponent implements OnInit {
   }
 
   private stop(): void {
-    this.continue();
     this.remainingSeconds = 0;
+    this.continue();
+  }
+
+  private editRounds(increment): void {
+    if (this.rounds >= 1) {
+      this.rounds = this.rounds + increment;
+    }
   }
 
 }
