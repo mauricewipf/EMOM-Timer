@@ -25,7 +25,7 @@ export class CardComponent implements OnInit {
     this.remainingSeconds = remainingSeconds;
     this.isTimerRunning = true;
     setTimeout(() => {
-      if (this.remainingSeconds > 0 && !this.isTimerPaused) {
+      if (this.remainingSeconds > 0 && this.isTimerRunning && !this.isTimerPaused) {
         this.remainingSeconds = --remainingSeconds;
         if (this.remainingSeconds <= 5) {
           this.audio.play();
@@ -53,8 +53,10 @@ export class CardComponent implements OnInit {
   }
 
   private stop(): void {
-    this.remainingSeconds = 0;
-    this.continue();
+    this.isTimerPaused = false;
+    this.isTimerRunning = false;
+    this.currentRound = 1;
+    this.remainingSeconds = this.sixtySeconds;
   }
 
   private editRounds(increment): void {
