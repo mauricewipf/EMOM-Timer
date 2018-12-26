@@ -52,3 +52,9 @@ Visit [https://emom-timer.herokuapp.com](https://emom-timer.herokuapp.com).
 ## Acknowledgement
 
 The project is based on [this tutorial](https://medium.com/@nsmirnova/creating-pwa-with-angular-5-e36ea2378b5d).
+
+Tick Sound recorded by [DeepFrozenApps](http://soundbible.com/2044-Tick.html).
+
+## License
+
+The contents of this repository are covered under the [MIT License](https://github.com/udacity/ud777-writing-readmes/blob/master/LICENSE).
