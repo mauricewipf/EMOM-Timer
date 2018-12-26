@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit {
-  private sixtySeconds = 10;
+  private sixtySeconds = 60;
   public remainingSeconds = this.sixtySeconds;
   public isTimerRunning = false;
   public isTimerPaused = false;
