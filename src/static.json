@@ -1,5 +1,5 @@
 {
-    "root": "dist/EMOM-Timer/",
+    "root": "dist/",
     "clean_urls": true,
     "routes": {
         "/*.js": "/",
