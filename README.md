@@ -6,26 +6,6 @@ It is a **Progressive Web App**. Download the app from the browser and use it of
 
 [![EMOM-Timer](Screenshot.png)](https://emom-timer.herokuapp.com)
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
 ## Publish on GitHub Pages
 
 GitHub Pages needs static files. They are generated with `ng build`. This command creates a `dist/EMOM-Timer` folder. 
@@ -48,6 +28,34 @@ $ heroku open
 ```
 Visit [https://emom-timer.herokuapp.com](https://emom-timer.herokuapp.com).
 
+## Roadmap
+
+- Sound on mobile devices
+- After clicking start, wait another 5 seconds 
+- Add option for 30 seconds rest time
+- Prevent zoom in on mobile devices when double-clicking
+
+## Angular CLI Commands
+
+### Development server
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+### Code scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+### Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+### Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+### Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 ## Acknowledgement
 
